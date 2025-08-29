@@ -12,12 +12,15 @@ class PokemonRepositoryImpl(
         limit: Int,
         offset: Int
     ): List<Pokemon> {
-        val apiResult = api.getPokemons(limit, offset)
-        insertPokemons(apiResult)
-        apiResult.forEach { pokemon ->
-            Log.d("FETCH", "$pokemon")
+        return try {
+            val apiResult = api.getPokemons(limit, offset)
+            insertPokemons(apiResult) // кешируем в Room
+            apiResult
+        } catch (e: Exception) {
+            Log.e("FETCH", "Network error, fallback to Room", e)
+            // если нет сети → берём локально
+            dao.getAll()
         }
-        return apiResult
     }
 
     override suspend fun insertPokemons(pokemons: List<Pokemon>) {

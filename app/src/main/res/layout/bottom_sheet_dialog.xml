@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/outline_arrow_back_24"
+            android:layout_gravity="start|center_vertical"
+            android:layout_margin="10dp"
+            android:background="@null"
+            android:backgroundTint="@null"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Sort by"
+            android:textSize="26sp" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sort_by_number"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Num"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sort_by_name"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Name"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sort_by_hp"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="HP"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sort_by_attack"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Attack"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sort_by_defense"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Def"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter by"
+            android:layout_gravity="center"
+            android:textSize="26sp"
+            android:layout_marginTop="8dp"/>
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/typeFilterContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/filter_normal"
+                    android:text="Normal"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_fire"
+                    android:text="Fire"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_water"
+                    android:text="Water"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_electric"
+                    android:text="Electric"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_grass"
+                    android:text="Grass"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_ice"
+                    android:text="Ice"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_fighting"
+                    android:text="Fighting"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_poison"
+                    android:text="Poison"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_flying"
+                    android:text="Flying"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_ground"
+                    android:text="Ground"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_psychic"
+                    android:text="Psychic"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_bug"
+                    android:text="Bug"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_rock"
+                    android:text="Rock"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_ghost"
+                    android:text="Ghost"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_dragon"
+                    android:text="Dragon"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_dark"
+                    android:text="Dark"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_steel"
+                    android:text="Steel"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <Button
+                    android:id="@+id/filter_fairy"
+                    android:text="Fairy"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apply filters"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

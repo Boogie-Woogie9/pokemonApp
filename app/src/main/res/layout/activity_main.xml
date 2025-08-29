@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Лого -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="pokemon logo"
+            android:src="@drawable/pokemon_logo"/>
+
+        <!-- Поиск -->
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_marginHorizontal="8dp"/>
+
+        <!-- Контейнер для RecyclerView + прогресса + пустого результата -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- Swipe + RecyclerView -->
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"/>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <!-- Прогресс бар -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <!-- Пустой результат -->
+            <TextView
+                android:id="@+id/no_results_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Покемоны не найдены"
+                android:layout_gravity="center"
+                android:textSize="30sp"
+                android:textColor="#C62828"
+                android:layout_marginBottom="100dp"
+                android:visibility="gone"
+                />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- FAB поверх всего -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/filter_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/error_image"
+        android:contentDescription="Filter button"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
